@@ -76,7 +76,7 @@ const list = document.getElementById('list');
 function showList(val='') {
 	list.innerHTML = '';
 	const res = pokemons.forEach(pokemon => {
-		if(pokemon.name.includes(val)) {
+		if (pokemon.name.includes(val)) {
 			const li = document.createElement('li');
 			li.innerHTML = /* HTML */ `
 				<div class="card1-img">

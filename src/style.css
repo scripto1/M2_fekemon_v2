@@ -38,7 +38,6 @@ body {
 header .container {
 	position: fixed;
 }
-
 header .search-form {
 	border: 2px solid var(--blue);
 	padding: 10px;
@@ -69,15 +68,101 @@ header .search-form #searchBtn {
 	border: none;
 	background-color: transparent;
 }
-
 header .search-form span {
  	font-size: 2rem;
  	color: var(--blue);
  	cursor: pointer
 }
 
+/* NEW BUTTON */
 
-header .create-btn {
+header .create-btn,
+.modal-box {
+	display: flex;
+	background-color: var(--blue);
+	padding-top: 9px;
+	padding-left: 20px;
+	border-radius: 30px;
+	border: none;
+	margin: 0px 30px;
+	width: 130px;
+	height: 60px;	
+	cursor: pointer;
+	transition: .1s;
+	color: var(--yellow);
+	font-family: var(--mikser);
+	font-size: 1.8rem;
+	font-weight: 700;
+	font-style: normal;
+}
+header .create-btn:active {
+	transform: scale(.95);
+}
+header .create-btn span {
+	font-size: 2.3rem;
+	transition: 0.3s;
+	color: black;
+	margin: 3px 5px;
+}
+header .create-btn:hover span {
+	transform: rotate(90deg);
+}
+
+.overlay {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0,0,0,.3);
+	opacity: 0;
+	pointer-events: none;
+}
+
+header .modal-box {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 380px;
+	width: 100%;
+	height: auto;
+	padding: 30px 20px;
+	border-radius: 24px;
+	background-color: var(--grass);
+	align-items: space-around;
+	opacity: 0;
+}
+
+header .modal-box h3 {
+	font-size: 16px;
+	color: #333;
+	text-align: center;
+	margin-top: 30px;
+}
+
+header .modal-box .buttons {
+	margin-top: 20px;
+}
+
+header .modal-box button {
+	font-size: 14px;
+	padding: 6px 12px;
+	margin: 0 10px;
+	color: var(--yellow);
+	background-color: var(--blue);
+	border: none;
+	border-radius: 20px;
+}
+
+header .modal-box button:hover {
+	background-color: #2073b7;
+}
+
+
+
+/* header .create-btn {
 	display: flex;
 	background-color: var(--blue);
 	padding: 10px;
@@ -89,9 +174,8 @@ header .create-btn {
 	transition: .1s;
 }
 header .create-btn:active {
-	transform: scale(.95)
+	transform: scale(.95);
 }
-
 
 header .create-btn h1 {
 	padding-left: 20px;
@@ -109,13 +193,14 @@ header .create-btn span {
 }
 header .create-btn:hover span {
 	transform: rotate(90deg);
-}
+} */
+
+/* POKEMON LOGO */
 
 header .pokemon-logo {
 	position: fixed;
 	right: 30px;
-	top: 35px;
-	
+	top: 35px;	
 }
 header .pokemon-logo img {
 	width: 50px;
@@ -125,6 +210,8 @@ header .pokemon-logo img:hover {
 	transform: scale(1.1);
 	cursor: pointer;
 }
+
+/* BACKGROUND LETTERS */
 
 header p {
 	font-size: 140px;
@@ -185,7 +272,8 @@ section.container li .type-cont .type1 {
 	border-radius: 10px;
 	padding: 8px;	
 }
-section.container li .type-cont .type2 {
+
+section.container li .type-cont .type2 {	
 	font-family: var(--pre-reg);
 	font-size: .8rem;
 	color: #fff;
@@ -194,3 +282,7 @@ section.container li .type-cont .type2 {
 	border-radius: 10px;
 	padding: 8px;
 }
+
+/* section.container li .type-cont .type2:not([value=""]) {
+	display: none;
+} */
