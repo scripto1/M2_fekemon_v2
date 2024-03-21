@@ -61,6 +61,15 @@ header .search-form input {
   font-size: 25px;
   background-color: transparent;
 }
+header .search-form #searchBtn {
+	width: 60px;
+	height: 50px;
+	margin-left: -15px;
+	padding: 10px;	
+	border: none;
+	background-color: transparent;
+}
+
 header .search-form span {
  	font-size: 2rem;
  	color: var(--blue);
