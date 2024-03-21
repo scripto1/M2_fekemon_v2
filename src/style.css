@@ -139,12 +139,15 @@ header p {
 
 /* SECTION */
 
-section .card-container {
+section.container {
 	padding: 130px 100px;
-	display: flex;
-	flex-wrap: wrap;
 }
-section .card-container .card1 {
+section.container #list {
+	display: flex;
+  flex-wrap: wrap;
+}
+
+section.container .card1 {
 	width: 180px;
 	height: 250px;
 	background: #fff;
@@ -155,25 +158,25 @@ section .card-container .card1 {
 	cursor: pointer;
 	transition: .2s;
 }
-section .card-container .card1:hover {
+section.container .card1:hover {
 	transform: scale(1.03);	
 }
 
-section .card-container .card1 .card1-img > img {
+section.container .card1 .card1-img > img {
 	width: 130px;
 	margin-top: 20px;	
 }
-section .card-container .card1 h2 {
+section.container .card1 p {
 	font-family: var(--pre-bold);
 	font-size: 1rem;
 	margin: 15px;
 }
-section .card-container .card1 .type-cont {
+section.container .card1 .type-cont {
 	display: flex;
 	justify-content: center;
 	gap: 10px;
 }
-section .card-container .card1 .type-cont .type1 {
+section.container .card1 .type-cont .type1 {
 	font-family: var(--pre-reg);
 	font-size: .8rem;
 	color: #fff;
@@ -182,7 +185,7 @@ section .card-container .card1 .type-cont .type1 {
 	border-radius: 10px;
 	padding: 8px;	
 }
-section .card-container .card1 .type-cont .type2 {
+section.container .card1 .type-cont .type2 {
 	font-family: var(--pre-reg);
 	font-size: .8rem;
 	color: #fff;
