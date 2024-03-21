@@ -147,7 +147,7 @@ section.container #list {
   flex-wrap: wrap;
 }
 
-section.container .card1 {
+section.container li {
 	width: 180px;
 	height: 250px;
 	background: #fff;
@@ -158,25 +158,25 @@ section.container .card1 {
 	cursor: pointer;
 	transition: .2s;
 }
-section.container .card1:hover {
+section.container li:hover {
 	transform: scale(1.03);	
 }
 
-section.container .card1 .card1-img > img {
+section.container li .card1-img > img {
 	width: 130px;
 	margin-top: 20px;	
 }
-section.container .card1 p {
+section.container li p {
 	font-family: var(--pre-bold);
 	font-size: 1rem;
 	margin: 15px;
 }
-section.container .card1 .type-cont {
+section.container li .type-cont {
 	display: flex;
 	justify-content: center;
 	gap: 10px;
 }
-section.container .card1 .type-cont .type1 {
+section.container li .type-cont .type1 {
 	font-family: var(--pre-reg);
 	font-size: .8rem;
 	color: #fff;
@@ -185,7 +185,7 @@ section.container .card1 .type-cont .type1 {
 	border-radius: 10px;
 	padding: 8px;	
 }
-section.container .card1 .type-cont .type2 {
+section.container li .type-cont .type2 {
 	font-family: var(--pre-reg);
 	font-size: .8rem;
 	color: #fff;
