@@ -71,12 +71,13 @@ const pokemons = [
 	},
 ]
 
+// 검색 결과에 따라 list 요소 보여주기 
 const list = document.getElementById('list');
 
 function showList(val='') {
 	list.innerHTML = '';
 	const res = pokemons.forEach(pokemon => {
-		if (pokemon.name.includes(val)) {
+		if(pokemon.name.includes(val)) {
 			const li = document.createElement('li');
 			li.innerHTML = /* HTML */ `
 				<div class="card1-img">
@@ -120,7 +121,7 @@ function showList(val='') {
 }
 showList()
 
-
+// 검색 기능
 const searchInput = document.getElementById('search');
 const searchBtn = document.getElementById('searchBtn');
 
@@ -131,3 +132,11 @@ searchBtn.addEventListener('click', (e) => {
 	showList(val)
 })
 
+// 모달 
+const main = document.querySelector('main')
+const overlay = document.querySelector('.overlay')
+const showBtn = document.querySelector('.show-modal')
+const closeBtn = document.querySelector('.close-btn')
+
+showBtn.addEventListener('click', () => main.classList.add('active'))
+closeBtn.addEventListener('click', () => main.classList.remove('active'))
