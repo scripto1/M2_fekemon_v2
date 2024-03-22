@@ -121,6 +121,14 @@ function showList(val='') {
 }
 showList()
 
+// 타입에 따라 색상 변경
+const type1El = document.querySelector('.type1');
+
+pokemons.forEach((pokemon) => {
+  const type1Class = `type1-${pokemon.type1}`;
+  type1El.classList.add(type1Class);
+});
+
 // 검색 기능
 const searchInput = document.getElementById('search');
 const searchBtn = document.getElementById('searchBtn');
