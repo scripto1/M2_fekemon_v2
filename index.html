@@ -22,14 +22,60 @@
 	
 	<main>
 		<div class="modal-box">
-			<h2>새로운 포켓몬 만들기</h2>
-			<h3>여기는 포켓몬 이름과 타입이 들어갑니다 </h3>
-			<div class="buttons">
-				<button class="close-btn">ok, close</button>
-				<button>Create!</button>
+			<div class="modal-header">
+				<h2>새로운 포켓몬 만들기</h2>
+			</div>	
+		
+			<div class="modal-body">
+				<form action="#" id="myForm">
+					<div class="card imgholder">
+						<label for="imgInput" class="upload">
+							<input type="file" name="" id="imgInput" />
+							<i class="bi bi-plus-circle-dotted"></i>
+						</label>
+						<img
+							src="./Image/person-fill.svg"
+							alt=""
+							accept="image/svg"
+							width="200"
+							height="200"
+							class="img"/>
+					</div>
+					<div class="inputField">
+						<div>
+							<label for="name">이름</label>
+							<input type="text" name="" id="name" required />
+						</div>
+						<div>
+							<label for="age">타입1</label>
+							<input type="text" name="" id="type1" required />
+						</div>
+						<div>
+							<label for="age">타입2</label>
+							<input type="text" name="" id="type2" required />
+						</div>
+						<div>
+							<label for="city">특징</label>
+							<input type="text" name="" id="character" required />
+						</div>
+					</div>	
+				</form>
+			</div>
+
+			<div class="modal-footer">
+				<div class="buttons">
+					<button>Create!</button>
+					<button class="close-btn">ok, close</button>
+				</div>
 			</div>
 		</div>
-		<div class="overlay"></div>		
+
+
+
+
+
+
+		<!-- <div class="overlay"></div>		 -->
 	</main>
 
 <!-- HEADER	 -->
