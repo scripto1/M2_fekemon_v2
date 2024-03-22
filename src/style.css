@@ -144,7 +144,8 @@ header p {
 
 /* MODAL */
 
-.overlay {
+
+/* .overlay {
 	position: absolute;
 	width: 100%;
 	height: 100vh;
@@ -152,7 +153,7 @@ header p {
 	background-color: rgba(255, 255, 139, 0.3);
 	backdrop-filter: blur(3px); 
 	pointer-events: none;
-}
+} */
 
 .modal-box {
 	position: absolute;
@@ -162,7 +163,7 @@ header p {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	max-width: 380px;
+	max-width: 500px;
 	width: 100%;
 	height: auto;
 	padding: 30px 20px;
@@ -182,12 +183,19 @@ main.active .modal-box {
 	transform: translate(-50%, -50%) scale(1);
 }
 
-.modal-box h2 {
-	font-size: 20px;
-	color: var(--poison);
+/* HEADER */
+
+.modal-header {
+	border-bottom: 1px solid #007508;
+	width: 100%;
+	padding-bottom: 15px;
+}
+.modal-header h2 {
+	font-size: 23px;
+	color: var(--electric);
 	font-family: var(--pre-bold);
 	text-align: center;
-	margin-top: 10px;
+	/* margin-top: 10px; */
 }
 .modal-box h3 {
 	font-size: 16px;
@@ -196,12 +204,75 @@ main.active .modal-box {
 	margin-top: 20px;
 }
 
+/* BODY */
+
+.modal-body {
+	width: 100%;
+	padding-top: 20px; 
+}
+.modal-body form#myForm {
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+}
+.modal-body .imgholder {
+	border: 2px dashed #fff;
+	border-radius: 20px;
+	align-items: center;
+	position: relative;
+}
+.modal-body .imgholder .upload {
+	position: absolute;
+	top: 63%;
+	left: 50%;
+	transform: translate(-50%, -50%);	
+	cursor: pointer;
+}
+.modal-body .imgholder .upload input {
+	display: none;
+}
+.modal-body .imgholder .upload i {
+	font-size: 50px;
+	color: #555555;
+	/* background-color: #fff; */
+}
+.modal-body .imgholder img {
+	width: 200px;
+	height: 200px;
+	padding-top: 30px;
+}
+
+.modal-body form#myForm.inputField { 
+  
+}
+
+.modal-body form#myForm .inputField label {
+ font-family: var(--pre-bold);
+ font-size: 18px;
+ 
+}
+.modal-body form#myForm .inputField input {
+	width: 200px;
+	height: 40px;
+	border-radius: 10px;
+	border: none;
+	margin-bottom: 10px;
+	font-size: 20px;
+	padding-left: 10px;
+	
+}
+
+
+
+
+/* FOOTER */
+
 .modal-box .buttons {
 	margin-top: 20px;
 }
 
 .modal-box button {
-	font-size: 14px;
+	font-size: 20px;
 	padding: 6px 12px;
 	margin: 0 10px;
 	color: var(--yellow);
