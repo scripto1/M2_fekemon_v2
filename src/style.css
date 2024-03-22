@@ -220,10 +220,11 @@ main.active .modal-box {
 	border-radius: 20px;
 	align-items: center;
 	position: relative;
+	background-color: #fff;
 }
 .modal-body .imgholder .upload {
 	position: absolute;
-	top: 63%;
+	top: 73%;
 	left: 50%;
 	transform: translate(-50%, -50%);	
 	cursor: pointer;
@@ -232,33 +233,35 @@ main.active .modal-box {
 	display: none;
 }
 .modal-body .imgholder .upload i {
-	font-size: 50px;
-	color: #555555;
+	font-size: 45px;
+	color: #717171;
 	/* background-color: #fff; */
 }
 .modal-body .imgholder img {
 	width: 200px;
 	height: 200px;
-	padding-top: 30px;
+	padding-top: 10px;
 }
 
 .modal-body form#myForm.inputField { 
-  
+
 }
 
 .modal-body form#myForm .inputField label {
  font-family: var(--pre-bold);
- font-size: 18px;
+ font-size: 17px;
  
 }
 .modal-body form#myForm .inputField input {
 	width: 200px;
 	height: 40px;
-	border-radius: 10px;
-	border: none;
+	border-top: transparent;
+	border-right: transparent;
+	border-left: transparent;
+	border-bottom: 2px solid #fff;
 	margin-bottom: 10px;
 	font-size: 20px;
-	padding-left: 10px;
+	background: transparent;
 	
 }
 
