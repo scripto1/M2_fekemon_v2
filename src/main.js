@@ -94,60 +94,34 @@ const pokemons = [
 // 검색 결과에 따라 list 요소 보여주기 
 const list = document.getElementById('list');
 
+function createLiEl(pokemon) {
+	const li = document.createElement('li');
+		li.innerHTML = /* HTML */ `
+			<div class="card1-img">
+				<img src="${pokemon.image}" alt="${pokemon.name}">
+			</div>				
+			<p>${pokemon.name}</p>
+			<div class="type-cont">
+				<div class="type1-${pokemon.classType1}">${pokemon.type1}</div>					
+				<div class="type2-${pokemon.classType2}">${pokemon.type2}</div>					
+			</div>			
+		`
+	list.appendChild(li)
+}
+// 검색 조건 
 function showList(val='') {
 	list.innerHTML = '';
 	const res = pokemons.forEach(pokemon => {
 		if(pokemon.name.includes(val)) {
-			const li = document.createElement('li');
-			li.innerHTML = /* HTML */ `
-				<div class="card1-img">
-					<img src="${pokemon.image}" alt="${pokemon.name}">
-				</div>				
-				<p>${pokemon.name}</p>
-				<div class="type-cont">
-					<div class="type1-${pokemon.classType1}">${pokemon.type1}</div>					
-					<div class="type2-${pokemon.classType2}">${pokemon.type2}</div>					
-				</div>			
-			`
-			list.appendChild(li)
+			createLiEl(pokemon)
 		} else if (pokemon.type1.includes(val)) {			
-			const li = document.createElement('li');
-			li.innerHTML = /* HTML */ `
-				<div class="card1-img">
-					<img src="${pokemon.image}" alt="${pokemon.name}">
-				</div>				
-				<p>${pokemon.name}</p>
-				<div class="type-cont">
-					<div class="type1-${pokemon.classType1}">${pokemon.type1}</div>					
-					<div class="type2-${pokemon.classType2}">${pokemon.type2}</div>					
-				</div>			
-			`
-			list.appendChild(li)
+			createLiEl(pokemon)
 		} else if (pokemon.type2.includes(val)) {			
-			const li = document.createElement('li');
-			li.innerHTML = /* HTML */ `
-				<div class="card1-img">
-					<img src="${pokemon.image}" alt="${pokemon.name}">
-				</div>				
-				<p>${pokemon.name}</p>
-				<div class="type-cont">
-					<div class="type1-${pokemon.classType1}">${pokemon.type1}</div>					
-					<div class="type2-${pokemon.classType2}">${pokemon.type2}</div>					
-				</div>			
-			`
-			list.appendChild(li)
+			createLiEl(pokemon)
 		}		
 	})
 }
 showList()
-
-// 타입에 따라 색상 변경
-// const type1El = document.querySelector('.type1');
-
-// pokemons.forEach((pokemon) => {
-//   const type1Class = `type1-${pokemon.type1}`;
-//   type1El.classList.add(type1Class);
-// });
 
 // 검색 기능
 const searchInput = document.getElementById('search');
