@@ -242,15 +242,9 @@ main.active .modal-box {
 	height: 200px;
 	padding-top: 10px;
 }
-
-.modal-body form#myForm.inputField { 
-
-}
-
 .modal-body form#myForm .inputField label {
  font-family: var(--pre-bold);
- font-size: 17px;
- 
+ font-size: 17px; 
 }
 .modal-body form#myForm .inputField input {
 	width: 200px;
@@ -261,19 +255,14 @@ main.active .modal-box {
 	border-bottom: 2px solid #fff;
 	margin-bottom: 10px;
 	font-size: 20px;
-	background: transparent;
-	
+	background: transparent;	
 }
-
-
-
 
 /* FOOTER */
 
 .modal-box .buttons {
 	margin-top: 20px;
 }
-
 .modal-box button {
 	font-size: 20px;
 	padding: 6px 12px;
@@ -283,11 +272,132 @@ main.active .modal-box {
 	border: none;
 	border-radius: 20px;
 }
-
 .modal-box button:hover {
 	background-color: #2073b7;
 }
 
+/* EDITMODAL */
+
+.editmodal-box {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%) scale(1.2);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 500px;
+	width: 100%;
+	height: auto;
+	padding: 30px 20px;
+	border-radius: 24px;
+	background-color: var(--electric);
+	align-items: space-around;
+	opacity: 0;
+	pointer-events: none;
+	z-index: 1;
+	transition: all .2s ease;
+	box-shadow: 2px 2px 20px 10px rgba(0, 0, 0, 0.4);
+
+}
+.editmodal-box.active {
+	opacity: 1;
+  pointer-events: auto;
+	transform: translate(-50%, -50%) scale(1);
+}
+
+/* HEADER */
+
+.editmodal-header {
+	border-bottom: 1px solid #007508;
+	width: 100%;
+	padding-bottom: 15px;
+}
+.editmodal-header h2 {
+	font-size: 23px;
+	color: var(--grass);
+	font-family: var(--pre-bold);
+	text-align: center;
+	/* margin-top: 10px; */
+}
+.editmodal-box h3 {
+	font-size: 16px;
+	color: #333;
+	text-align: center;
+	margin-top: 20px;
+}
+
+/* BODY */
+
+.editmodal-body {
+	width: 100%;
+	padding-top: 20px; 
+}
+.editmodal-body form#myForm {
+	display: flex;
+	justify-content: center;
+	gap: 30px;
+}
+.editmodal-body .imgholder {
+	border: 2px dashed #fff;
+	border-radius: 20px;
+	align-items: center;
+	position: relative;
+	background-color: #fff;
+}
+.editmodal-body .imgholder .upload {
+	position: absolute;
+	top: 73%;
+	left: 50%;
+	transform: translate(-50%, -50%);	
+	cursor: pointer;
+}
+.editmodal-body .imgholder .upload input {
+	display: none;
+}
+.editmodal-body .imgholder .upload i {
+	font-size: 45px;
+	color: #717171;
+	/* background-color: #fff; */
+}
+.editmodal-body .imgholder img {
+	width: 200px;
+	height: 200px;
+	padding-top: 10px;
+}
+.editmodal-body form#myForm .inputField label {
+ font-family: var(--pre-bold);
+ font-size: 17px; 
+}
+.editmodal-body form#myForm .inputField input {
+	width: 200px;
+	height: 40px;
+	border-top: transparent;
+	border-right: transparent;
+	border-left: transparent;
+	border-bottom: 2px solid #fff;
+	margin-bottom: 10px;
+	font-size: 20px;
+	background: transparent;	
+}
+
+/* FOOTER */
+
+.editmodal-box .buttons {
+	margin-top: 20px;
+}
+.editmodal-box button {
+	font-size: 20px;
+	padding: 6px 12px;
+	margin: 0 10px;
+	color: var(--yellow);
+	background-color: var(--blue);
+	border: none;
+	border-radius: 20px;
+}
+.editmodal-box button:hover {
+	background-color: #2073b7;
+}
 
 
 /* SECTION */

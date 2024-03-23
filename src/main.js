@@ -157,12 +157,16 @@ searchBtn.addEventListener('click', (e) => {
 
 // 모달 
 const main = document.querySelector('main')
-const overlay = document.querySelector('.overlay')
 const showBtn = document.querySelector('.show-modal')
 const closeBtn = document.querySelector('.closeBtn')
+const editModal = document.querySelector('.editmodal-box')
+const showEdit = document.querySelector('section.container')
+const closeEdit = document.querySelector('.editCloseBtn')
 
 showBtn.addEventListener('click', () => main.classList.add('active'))
 closeBtn.addEventListener('click', () => main.classList.remove('active'))
+showEdit.addEventListener('click', () => editModal.classList.add('active'))
+closeEdit.addEventListener('click', () => editModal.classList.remove('active'))
 
 
 
