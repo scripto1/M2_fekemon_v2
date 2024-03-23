@@ -91,6 +91,26 @@ const pokemons = [
 	},
 ]
 
+const newMemberAddBtn = document.querySelector('.show-modal'),
+	mainBg = document.querySelector('main'),
+	popupForm = document.querySelector('.modal-box'),
+	crossBtn = document.querySelector('.closeBtn'),
+	submitBtn = document.querySelector('.createBtn'),
+ 	modalTitle = document.querySelector('.modal-header'),
+	popupFooter = document.querySelector('.modal-footer'),
+	imgInput = document.querySelector('.img'),
+	imgHolder = document.querySelector('.imgholder'),
+	form = document.querySelector('form'),
+	formInputFields = document.querySelectorAll('form input'),
+	uploadimg = document.querySelector("#uploadimg"),
+	name = document.getElementById("name"),
+	type1 = document.getElementById("type1"),
+	type2 = document.getElementById("type2")
+	// userInfo = document.querySelector(".userInfo"),	
+	// filterData = document.getElementById("search")
+
+
+
 // 검색 결과에 따라 list 요소 보여주기 
 const list = document.getElementById('list');
 
@@ -108,22 +128,23 @@ function createLiEl(pokemon) {
 		`
 	list.appendChild(li)
 }
-// 검색 조건 
+ 
 function showList(val='') {
 	list.innerHTML = '';
 	const res = pokemons.forEach(pokemon => {
 		if(pokemon.name.includes(val)) {
-			createLiEl(pokemon)
+			createLiEl(pokemon) 
 		} else if (pokemon.type1.includes(val)) {			
-			createLiEl(pokemon)
+			createLiEl(pokemon) 
 		} else if (pokemon.type2.includes(val)) {			
-			createLiEl(pokemon)
+			createLiEl(pokemon) 
 		}		
 	})
 }
 showList()
 
-// 검색 기능
+
+// 검색 버튼 기능
 const searchInput = document.getElementById('search');
 const searchBtn = document.getElementById('searchBtn');
 
@@ -138,7 +159,85 @@ searchBtn.addEventListener('click', (e) => {
 const main = document.querySelector('main')
 const overlay = document.querySelector('.overlay')
 const showBtn = document.querySelector('.show-modal')
-const closeBtn = document.querySelector('.close-btn')
+const closeBtn = document.querySelector('.closeBtn')
 
 showBtn.addEventListener('click', () => main.classList.add('active'))
 closeBtn.addEventListener('click', () => main.classList.remove('active'))
+
+
+
+// 파일 업로드 간단 버전
+// file.onchange = function () {
+// 	imgInput.src = URL.createObjectURL(file.files[0]);
+// }
+
+uploadimg.onchange = function() {
+	if(uploadimg.files[0].size < 1000000) { 
+		let fileReader = new FileReader()
+		fileReader.onload = function(e) {
+			let imgUrl = e.target.result
+			imgInput.src = imgUrl
+		}
+		fileReader.readAsDataURL(uploadimg.files[0])
+	}
+}
+
+// 로컬 스토리지에 정보 저장
+
+let originalData = localStorage.getItem('userProfile') ? JSON.parse(localStorage.getItem('userProfile')) : []
+let getData = [...originalData]
+
+let isEdit = false, editId
+
+form.addEventListener('submit', (e)=> {
+	e.preventDefault()
+
+	const information = {
+		name: name.value,
+		type1: type1.value,
+		type2: type2.value,		
+		image: imgInput.src == undefined ? "./img/person-fill.svg" : imgInput.src,
+	}
+
+	if(!isEdit) {
+		originalData.push(information)
+	} else {
+		originalData[editId] = information
+	}
+	getData = [...originalData]
+	
+	const ulElement = document.querySelector('ul')
+	const newLiEl = document.createElement('li')
+		newLiEl.innerHTML = /* HTML */ `
+		<div class="card1-img">
+			<img src="${information.image}" alt="${information.name}">
+		</div>				
+		<p>${information.name}</p>
+		<div class="type-cont">
+			<div class="type1-normal">${information.type1}</div>					
+			<div class="type2-water">${information.type2}</div>					
+		</div>			
+	`
+	ulElement.appendChild(newLiEl);
+
+
+	localStorage.setItem('userProfile', JSON.stringify(originalData))
+
+	submitBtn.innerHTML = "Submit"
+	// modalTitle.innerHTML = "Fill the Form"
+
+	mainBg.classList.remove('active')
+	popupForm.classList.remove('active')
+	form.reset()
+})
+
+
+
+
+
+
+
+
+
+
+
