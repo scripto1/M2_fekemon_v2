@@ -215,7 +215,7 @@ form.addEventListener('submit', (e)=> {
 		<p>${information.name}</p>
 		<div class="type-cont">
 			<div class="type1-normal">${information.type1}</div>					
-			<div class="type2-water">${information.type2}</div>					
+			<div class="type2-poison">${information.type2}</div>					
 		</div>			
 	`
 	ulElement.appendChild(newLiEl);

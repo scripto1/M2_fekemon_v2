@@ -329,75 +329,54 @@ section.container li .type-cont {
 	display: flex;
 	justify-content: center;
 	gap: 10px;
+	font-family: var(--pre-bold);
+	font-size: .8rem;
+	color: #fff;	
 }
 
 section.container li .type-cont .type1-grass {
-	font-family: var(--pre-bold);
-	font-size: .8rem;
-	color: #fff;
 	background-color: var(--grass);
 	width: 30%;
 	border-radius: 10px;
 	padding: 8px;
 }
 section.container li .type-cont .type2-poison {
-	font-family: var(--pre-bold);
-	font-size: .8rem;
-	color: #fff;
 	background-color: var(--poison);
 	width: 30%;
 	border-radius: 10px;
 	padding: 8px;
 }
 section.container li .type-cont .type1-fire {
-	font-family: var(--pre-bold);
-	font-size: .8rem;
-	color: #fff;
 	background-color: var(--fire);
 	width: 30%;
 	border-radius: 10px;
 	padding: 8px;
 }
 section.container li .type-cont .type1-water {
-	font-family: var(--pre-bold);
-	font-size: .8rem;
-	color: #fff;
 	background-color: var(--water);
 	width: 30%;
 	border-radius: 10px;
 	padding: 8px;
 }
 section.container li .type-cont .type1-insect {
-	font-family: var(--pre-bold);
-	font-size: .8rem;
-	color: #fff;
 	background-color: var(--insect);
 	width: 30%;
 	border-radius: 10px;
 	padding: 8px;
 }
 section.container li .type-cont .type1-normal {
-	font-family: var(--pre-bold);
-	font-size: .8rem;
-	color: #fff;
 	background-color: var(--normal);
 	width: 30%;
 	border-radius: 10px;
 	padding: 8px;
 }
 section.container li .type-cont .type2-fly {
-	font-family: var(--pre-bold);
-	font-size: .8rem;
-	color: #fff;
 	background-color: var(--fly);
 	width: 30%;
 	border-radius: 10px;
 	padding: 8px;
 }
 section.container li .type-cont .type1-electric {
-	font-family: var(--pre-bold);
-	font-size: .8rem;
-	color: #fff;
 	background-color: var(--electric);
 	width: 30%;
 	border-radius: 10px;
