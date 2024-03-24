@@ -110,6 +110,12 @@ const newMemberAddBtn = document.querySelector('.show-modal'),
 	// filterData = document.getElementById("search")
 
 
+let loader = document.getElementById('preloader');
+window.addEventListener('load', () => {
+	setTimeout( () => {
+		loader.style.display = 'none';
+	}, 1550)
+})
 
 // 검색 결과에 따라 list 요소 보여주기 
 const list = document.getElementById('list');
@@ -167,6 +173,16 @@ showBtn.addEventListener('click', () => main.classList.add('active'))
 closeBtn.addEventListener('click', () => main.classList.remove('active'))
 showEdit.addEventListener('click', () => editModal.classList.add('active'))
 closeEdit.addEventListener('click', () => editModal.classList.remove('active'))
+
+// list.addEventListener('click', (event) => {
+//   if (event.target.tagName === 'li') {
+//     // Get the data for the clicked Pokemon
+//     const pokemon = event.target.textContent;
+
+//     // Display the data in a modal or alert box
+//     alert(`You clicked on the Pokemon: ${pokemon}`);
+//   }
+// });
 
 
 

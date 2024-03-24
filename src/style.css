@@ -33,7 +33,7 @@
 body {
 	background-color: #f7f3e5;
 	opacity: 0.8;
-	background-image: radial-gradient(#444cf7 0.5px, #f7f5e5 0.5px);
+	background-image: radial-gradient(#444cf7 0.7px, #f7f5e5 0.7px);
 	background-size: 20px 20px;
 	height: 3000px;
 }
@@ -143,17 +143,6 @@ header p {
 }
 
 /* MODAL */
-
-
-/* .overlay {
-	position: absolute;
-	width: 100%;
-	height: 100vh;
-	opacity: 0;
-	background-color: rgba(255, 255, 139, 0.3);
-	backdrop-filter: blur(3px); 
-	pointer-events: none;
-} */
 
 .modal-box {
 	position: absolute;
@@ -493,3 +482,51 @@ section.container li .type-cont .type1-electric {
 	padding: 8px;
 }
 
+/* PRELOADER */
+
+#preloader {
+	background: var(--electric);
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	z-index: 100;
+}
+#preloader .img1 {
+	width: 4%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	animation: preloader 1500ms;
+}
+#preloader .img2 {
+	width: 13%;
+	position: absolute;
+	top: 38%;
+	left: 47%;
+	animation: pikachu 1500ms;
+}
+
+@keyframes preloader {
+0% {	
+	opacity: 1;
+	rotate: 0deg; 
+}
+95% {	
+	opacity: 1;
+}
+100% {	
+	opacity: 0;
+	rotate: 359deg; 
+}
+}
+@keyframes pikachu {
+0% {	
+	opacity: 0; 
+}
+95% {
+	opacity: 0;
+}
+100% {	
+	opacity: 1; 
+}
+}
