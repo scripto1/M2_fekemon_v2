@@ -106,8 +106,7 @@ const newMemberAddBtn = document.querySelector('.show-modal'),
 	name = document.getElementById("name"),
 	type1 = document.getElementById("type1"),
 	type2 = document.getElementById("type2")
-	// userInfo = document.querySelector(".userInfo"),	
-	// filterData = document.getElementById("search")
+
 
 // loading 화면
 let loader = document.getElementById('preloader');
@@ -138,8 +137,7 @@ function createLiEl(pokemon) {
 			</div>			
 		`
 	list.appendChild(li)
-}
- 
+} 
 function showList(val='') {
 	list.innerHTML = '';
 	const res = pokemons.forEach(pokemon => {
@@ -197,7 +195,6 @@ uploadimg.onchange = function() {
 }
 
 // 로컬 스토리지에 정보 저장
-
 let originalData = localStorage.getItem('userProfile') ? JSON.parse(localStorage.getItem('userProfile')) : []
 let getData = [...originalData]
 
