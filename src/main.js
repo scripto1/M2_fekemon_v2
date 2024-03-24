@@ -109,13 +109,18 @@ const newMemberAddBtn = document.querySelector('.show-modal'),
 	// userInfo = document.querySelector(".userInfo"),	
 	// filterData = document.getElementById("search")
 
-
+// loading 화면
 let loader = document.getElementById('preloader');
 window.addEventListener('load', () => {
 	setTimeout( () => {
 		loader.style.display = 'none';
 	}, 1550)
 })
+
+// reload 기능
+document.getElementById('reload').addEventListener('click', () => {
+  location.reload();
+});
 
 // 검색 결과에 따라 list 요소 보여주기 
 const list = document.getElementById('list');
