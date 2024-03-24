@@ -171,24 +171,13 @@ const main = document.querySelector('main')
 const showBtn = document.querySelector('.show-modal')
 const closeBtn = document.querySelector('.closeBtn')
 const editModal = document.querySelector('.editmodal-box')
-const showEdit = document.querySelector('section.container')
+const showEdit = document.querySelector('ul#list')
 const closeEdit = document.querySelector('.editCloseBtn')
 
 showBtn.addEventListener('click', () => main.classList.add('active'))
 closeBtn.addEventListener('click', () => main.classList.remove('active'))
 showEdit.addEventListener('click', () => editModal.classList.add('active'))
 closeEdit.addEventListener('click', () => editModal.classList.remove('active'))
-
-// list.addEventListener('click', (event) => {
-//   if (event.target.tagName === 'li') {
-//     // Get the data for the clicked Pokemon
-//     const pokemon = event.target.textContent;
-
-//     // Display the data in a modal or alert box
-//     alert(`You clicked on the Pokemon: ${pokemon}`);
-//   }
-// });
-
 
 
 // 파일 업로드 간단 버전
@@ -245,17 +234,14 @@ form.addEventListener('submit', (e)=> {
 	`
 	ulElement.appendChild(newLiEl);
 
-
 	localStorage.setItem('userProfile', JSON.stringify(originalData))
 
 	submitBtn.innerHTML = "Submit"
-	// modalTitle.innerHTML = "Fill the Form"
 
 	mainBg.classList.remove('active')
 	popupForm.classList.remove('active')
 	form.reset()
 })
-
 
 
 
