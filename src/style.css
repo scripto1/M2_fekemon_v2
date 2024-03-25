@@ -10,6 +10,10 @@
 	--normal: #999999;
 	--fly: #95C9FF;
 	--electric: #FFDB00;
+	--esper: #FF637F;
+	--evil: #4F4747;
+	--ice: #42D8FF;
+	--fairy: #FFB1FF;
 
   /* 글꼴 */
 	--mikser: "bc-mikser", sans-serif;
@@ -483,6 +487,30 @@ section.container li .type-cont .type2-fly {
 }
 section.container li .type-cont .type1-electric {
 	background-color: var(--electric);
+	width: 30%;
+	border-radius: 10px;
+	padding: 8px;
+}
+section.container li .type-cont .type1-esper {
+	background-color: var(--esper);
+	width: 30%;
+	border-radius: 10px;
+	padding: 8px;
+}
+section.container li .type-cont .type1-evil {
+	background-color: var(--evil);
+	width: 30%;
+	border-radius: 10px;
+	padding: 8px;
+}
+section.container li .type-cont .type1-ice {
+	background-color: var(--ice);
+	width: 30%;
+	border-radius: 10px;
+	padding: 8px;
+}
+section.container li .type-cont .type1-fairy {
+	background-color: var(--fairy);
 	width: 30%;
 	border-radius: 10px;
 	padding: 8px;
