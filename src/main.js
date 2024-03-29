@@ -209,16 +209,10 @@ const pokemons = [
 ]
 
 const newMemberAddBtn = document.querySelector('.show-modal'),
-	mainBg = document.querySelector('main'),
 	popupForm = document.querySelector('.modal-box'),
-	crossBtn = document.querySelector('.closeBtn'),
 	submitBtn = document.querySelector('.createBtn'),
- 	modalTitle = document.querySelector('.modal-header'),
-	popupFooter = document.querySelector('.modal-footer'),
 	imgInput = document.querySelector('.img'),
-	imgHolder = document.querySelector('.imgholder'),
 	form = document.querySelector('form'),
-	formInputFields = document.querySelectorAll('form input'),
 	uploadimg = document.querySelector("#uploadimg"),
 	name = document.getElementById("name"),
 	type1 = document.getElementById("type1"),
@@ -226,7 +220,7 @@ const newMemberAddBtn = document.querySelector('.show-modal'),
 
 
 // loading 화면
-let loader = document.getElementById('preloader');
+const loader = document.getElementById('preloader');
 window.addEventListener('load', () => {
 	setTimeout( () => {
 		loader.style.display = 'none';
@@ -241,7 +235,7 @@ document.getElementById('reload').addEventListener('click', () => {
 // 검색 결과에 따라 list 요소 보여주기 
 const list = document.getElementById('list');
 
-function createLiEl(pokemon) {
+function createLiEl(pokemon, index) {
 	const li = document.createElement('li');
 		li.innerHTML = /* HTML */ `
 			<div class="card1-img">
@@ -253,17 +247,26 @@ function createLiEl(pokemon) {
 				<div class="type2-${pokemon.classType2}">${pokemon.type2}</div>					
 			</div>			
 		`
+  li.addEventListener('click', () => {
+    console.log(pokemon.image)
+    
+  modalImg.src = pokemon.image
+  modalName.value = pokemon.name
+  modalType1.value = pokemon.type1
+  modalType2.value = pokemon.type2
+  editModal.classList.add('active')  
+    })
 	list.appendChild(li)
 } 
 function showList(val='') {
 	list.innerHTML = '';
-	const res = pokemons.forEach(pokemon => {
+	const res = pokemons.forEach((pokemon, index) => {
 		if(pokemon.name.includes(val)) {
-			createLiEl(pokemon) 
+			createLiEl(pokemon, index) 
 		} else if (pokemon.type1.includes(val)) {			
-			createLiEl(pokemon) 
+			createLiEl(pokemon, index) 
 		} else if (pokemon.type2.includes(val)) {			
-			createLiEl(pokemon) 
+			createLiEl(pokemon, index) 
 		}		
 	})
 }
@@ -286,12 +289,18 @@ const main = document.querySelector('main')
 const showBtn = document.querySelector('.show-modal')
 const closeBtn = document.querySelector('.closeBtn')
 const editModal = document.querySelector('.editmodal-box')
-const showEdit = document.querySelector('ul#list')
+// const showEdit = document.querySelector('#list')
 const closeEdit = document.querySelector('.editCloseBtn')
+const modalTitle = document.querySelector('.modal-title')
+const modalImg = document.querySelector('.modal-img	')
+const modalName = document.querySelector('.modal-name')
+const modalType1 = document.querySelector('.modal-type1')
+const modalType2 = document.querySelector('.modal-type2')
+
 
 showBtn.addEventListener('click', () => main.classList.add('active'))
 closeBtn.addEventListener('click', () => main.classList.remove('active'))
-showEdit.addEventListener('click', () => editModal.classList.add('active'))
+// showEdit.addEventListener('click', () => editModal.classList.add('active'))
 closeEdit.addEventListener('click', () => editModal.classList.remove('active'))
 
 
@@ -301,14 +310,12 @@ closeEdit.addEventListener('click', () => editModal.classList.remove('active'))
 // }
 
 uploadimg.onchange = function() {
-	if(uploadimg.files[0].size < 1000000) { 
-		let fileReader = new FileReader()
-		fileReader.onload = function(e) {
-			let imgUrl = e.target.result
-			imgInput.src = imgUrl
+	let fileReader = new FileReader()
+	fileReader.onload = function(e) {
+		let imgUrl = e.target.result
+		imgInput.src = imgUrl
 		}
-		fileReader.readAsDataURL(uploadimg.files[0])
-	}
+	fileReader.readAsDataURL(uploadimg.files[0])	
 }
 
 // 로컬 스토리지에 정보 저장
@@ -352,7 +359,7 @@ form.addEventListener('submit', (e)=> {
 
 	submitBtn.innerHTML = "Submit"
 
-	mainBg.classList.remove('active')
+	main.classList.remove('active')
 	popupForm.classList.remove('active')
 	form.reset()
 })
